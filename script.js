@@ -1,5 +1,7 @@
 const mainSection = document.createElement('section');
 const sectionChangeGame = document.createElement('section');
+let base = 6;
+let result = 0;
 
 function createMainSection() {
   const bodyChild = document.querySelector('body');
@@ -82,7 +84,6 @@ function callStructure() {
   createGameBtns();
 }
 
-let base = 6;
 function createCircle() {
   for(let index = 0; index < base; index += 1) {
     const div = document.createElement('div');
@@ -91,6 +92,24 @@ function createCircle() {
   }
 }
 
+function generateRandomRGB() {
+  const r = Math.floor(Math.random()*256);
+  const g = Math.floor(Math.random()*256);
+  const b = Math.floor(Math.random()*256);
+  return `(${r}, ${g}, ${b})`;
+}
+
+function inputScore() {
+  let checkResult = document.getElementById('answer');
+  let checkScore = document.getElementById('score');
+  if(checkResult.innerText === 'Acertou!') {
+    result +=  3;
+    checkScore.innerText = `Placar: ${result}`;
+  } else if (checkResult.innerText === 'Errou! Tente novamente!') {
+    result -=  1;
+    checkScore.innerText = `Placar: ${result}`;
+  }
+}
 
 window.onload = function() {
   callStructure();
