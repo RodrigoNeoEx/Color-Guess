@@ -169,8 +169,28 @@ function chooseDificult() {
   setNameOnDificult()
 }
 
+function getSelected() {
+  let chooser = document.getElementById('changeDificult');
+  let chooserValue = chooser.options[chooser.selectedIndex];
+  return chooserValue.value;
+}
+
+function aplySelected() {
+  base = getSelected();
+  setRgbTextToGuess();
+  createCircle();
+  addColorAndEventsToCircles();
+  resetGame();
+}
+
+function listeners() {
+  const buttonReset = document.getElementById('reset-game');
+  buttonReset.addEventListener('click', resetGame);
+  const buttonDificult = document.getElementById('buttonDificult');
+  buttonDificult.addEventListener('click', aplySelected);
+}
+
 
 window.onload = function() {
   callStructure();
 };
-
