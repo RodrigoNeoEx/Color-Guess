@@ -2,6 +2,7 @@ const mainSection = document.createElement('section');
 const sectionChangeGame = document.createElement('section');
 let base = 6;
 let result = 0;
+let dificultLevels = 5
 
 function createMainSection() {
   const bodyChild = document.querySelector('body');
@@ -122,6 +123,25 @@ function randomizeColor(min, max) {
 function setRgbTextToGuess() {
   const rgbText = document.getElementById('rgb-color');
   rgbText.innerHTML = randomizeColor();
+}
+function checkAnswer(event) {
+  let pressedButton = event.target.style.backgroundColor.slice(3);
+  let checkResult = document.getElementById('rgb-color');
+  let printResult = document.getElementById('answer');
+  if(pressedButton === checkResult.innerText) {
+    printResult.innerHTML = 'Acertou!';
+  } else {
+    printResult.innerHTML = 'Errou! Tente novamente!';
+  }
+}
+
+function resetGame() {
+  let resetColors = document.getElementsByClassName('ball');
+  for(let index = 0; index < resetColors.length; index += 1 ) {
+    resetColors[index].style.backgroundColor = `rgb${generateRandomRGB()}`;
+  }
+  setRgbTextToGuess();
+  document.getElementById('answer').innerHTML = 'Escolha uma cor';
 }
 
 window.onload = function() {
