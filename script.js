@@ -71,5 +71,19 @@ function createSelectDif() {
   sectionChangeGame.appendChild(inputDificult);
 }
 
+function callStructure() {
+  createMainSection();
+  createMainTitle();
+  createSubTitle();
+  createScoreContainer();
+  createColorBtns();
+  createTextContainer();
+  createGameChangerSection();
+  createGameBtns();
+}
 
+
+window.onload = function() {
+  callStructure();
+};
 
