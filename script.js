@@ -144,6 +144,32 @@ function resetGame() {
   document.getElementById('answer').innerHTML = 'Escolha uma cor';
 }
 
+function setNameOnDificult() {
+  let setNames = document.getElementsByClassName('dificultNames')
+  for(let index = 0; index < setNames.length; index += 1) {
+    setNames[0].innerHTML = 'very easy'
+    setNames[0].value = 0
+    setNames[1].innerHTML = 'easy'
+    setNames[1].value = 6
+    setNames[2].innerHTML = 'medium'
+    setNames[2].value = 12
+    setNames[3].innerHTML = 'hard'
+    setNames[3].value = 18
+    setNames[4].innerHTML = 'very hard'
+    setNames[4].value = 24
+  }
+}
+
+function chooseDificult() {
+  for(let index = 0; index < dificultLevels; index += 1) {
+    let chooserOptions = document.createElement('option');
+    chooserOptions.className = 'dificultNames';
+    document.getElementById('changeDificult').appendChild(chooserOptions);
+  }
+  setNameOnDificult()
+}
+
+
 window.onload = function() {
   callStructure();
 };
