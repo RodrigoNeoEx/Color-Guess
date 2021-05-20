@@ -111,6 +111,19 @@ function inputScore() {
   }
 }
 
+function randomizeColor(min, max) {
+  let ball = document.getElementsByClassName('ball');
+  min = Math.ceil(0);
+  max = Math.floor(6);
+  let result = Math.floor(Math.random() * (max - min)) + min;
+  return ball[result].style.backgroundColor.slice(3)
+}
+
+function setRgbTextToGuess() {
+  const rgbText = document.getElementById('rgb-color');
+  rgbText.innerHTML = randomizeColor();
+}
+
 window.onload = function() {
   callStructure();
 };
