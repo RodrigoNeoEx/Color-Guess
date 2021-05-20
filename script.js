@@ -158,15 +158,23 @@ function setNameOnDificult() {
   let setNames = document.getElementsByClassName('dificultNames')
   for(let index = 0; index < setNames.length; index += 1) {
     setNames[0].innerHTML = 'very easy'
-    setNames[0].value = 0
+    setNames[0].value = 6
     setNames[1].innerHTML = 'easy'
-    setNames[1].value = 6
+    setNames[1].value = 12
     setNames[2].innerHTML = 'medium'
-    setNames[2].value = 12
+    setNames[2].value = 18
     setNames[3].innerHTML = 'hard'
-    setNames[3].value = 18
+    setNames[3].value = 30
     setNames[4].innerHTML = 'very hard'
-    setNames[4].value = 24
+    setNames[4].value = 42
+  }
+}
+
+function removeBalls() {
+  let ball = document.querySelectorAll('.ball')
+  let section = document.querySelector('.colorSection')
+  for(let index = 0; index < ball.length; index += 1) {
+  section.removeChild(ball[index]);
   }
 }
 
@@ -188,6 +196,7 @@ function getSelected() {
 function aplySelected() {
   base = getSelected();
   setRgbTextToGuess();
+  removeBalls();
   createCircle();
   addColorAndEventsToCircles();
   resetGame();
