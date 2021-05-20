@@ -135,6 +135,15 @@ function checkAnswer(event) {
   }
 }
 
+function addColorAndEventsToCircles() {
+  const allBalls = document.getElementsByClassName('ball');
+  for(let index = 0; index < allBalls.length; index += 1) {
+    allBalls[index].style.backgroundColor = `rgb${generateRandomRGB()}`;
+    allBalls[index].addEventListener('click', checkAnswer);
+    allBalls[index].addEventListener('click', inputScore);
+  }
+}
+
 function resetGame() {
   let resetColors = document.getElementsByClassName('ball');
   for(let index = 0; index < resetColors.length; index += 1 ) {
@@ -192,4 +201,11 @@ function listeners() {
 
 window.onload = function() {
   callStructure();
+  createCircle();
+  inputScore();
+  addColorAndEventsToCircles();
+  generateRandomRGB();
+  setRgbTextToGuess();
+  listeners();
+  chooseDificult();
 };
