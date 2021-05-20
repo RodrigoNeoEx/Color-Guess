@@ -29,3 +29,17 @@ function createScoreContainer() {
   placar.className = 'score'
   mainSection.appendChild(placar);
 }
+
+function createColorBtns() {
+  const colorButtons = document.createElement('section');
+  colorButtons.id = 'colorsSection';
+  colorButtons.className = 'colorSection';
+  mainSection.appendChild(colorButtons);
+}
+
+function createTextContainer() {
+  const dinamicText = document.createElement('p');
+  dinamicText.innerHTML = 'Escolha uma cor';
+  dinamicText.id = 'answer';
+  mainSection.appendChild(dinamicText);
+}
