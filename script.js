@@ -190,7 +190,6 @@ function listeners() {
   buttonDificult.addEventListener('click', aplySelected);
 }
 
-
 window.onload = function() {
   callStructure();
 };
