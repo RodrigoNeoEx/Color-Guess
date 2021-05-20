@@ -83,6 +83,7 @@ function callStructure() {
   createTextContainer();
   createGameChangerSection();
   createGameBtns();
+  createSelectDif();
 }
 
 function createCircle() {
