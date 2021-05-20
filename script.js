@@ -82,6 +82,15 @@ function callStructure() {
   createGameBtns();
 }
 
+let base = 6;
+function createCircle() {
+  for(let index = 0; index < base; index += 1) {
+    const div = document.createElement('div');
+    div.className = 'ball';
+    document.getElementById('colorsSection').appendChild(div);
+  }
+}
+
 
 window.onload = function() {
   callStructure();

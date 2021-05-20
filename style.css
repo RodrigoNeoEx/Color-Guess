@@ -1,0 +1,10 @@
+.ball {
+  border: 2px solid;
+  border-radius: 100%;
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  margin:2px;
+  outline: none;
+  width: 50px;
+}
