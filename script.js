@@ -1,4 +1,5 @@
 const mainSection = document.createElement('section');
+const sectionChangeGame = document.createElement('section');
 
 function createMainSection() {
   const bodyChild = document.querySelector('body');
@@ -43,3 +44,32 @@ function createTextContainer() {
   dinamicText.id = 'answer';
   mainSection.appendChild(dinamicText);
 }
+
+function createGameChangerSection() {
+  sectionChangeGame.id = 'dificult-reset';
+  sectionChangeGame.className = 'dificult-reset';
+  mainSection.appendChild(sectionChangeGame);
+}
+
+function createGameBtns() {
+  const buttonDificult = document.createElement('button');
+  const buttonReset = document.createElement('button');
+  buttonDificult.id = 'buttonDificult';
+  buttonDificult.innerHTML = 'Dificult';
+  buttonDificult.className = 'changeGameButtons';
+  buttonReset.id = 'reset-game';
+  buttonReset.className = 'changeGameButtons'
+  buttonReset.innerHTML = 'Reset Game';
+  sectionChangeGame.appendChild(buttonReset);
+  sectionChangeGame.appendChild(buttonDificult);
+}
+
+function createSelectDif() {
+  const inputDificult = document.createElement('select');
+  inputDificult.id = 'changeDificult';
+  inputDificult.className = 'changeDificult';
+  sectionChangeGame.appendChild(inputDificult);
+}
+
+
+
